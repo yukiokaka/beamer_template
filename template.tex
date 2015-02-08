@@ -1,0 +1,46 @@
+%16:9の画面用
+\documentclass[aspectratio=169,11pt, dvipdfmx]{beamer}
+
+%%%%%%%%%%%  theme  %%%%%%%%%%%
+\usetheme{CambridgeUS}
+
+%% 日本語の文字化け対策 %%%%%%%%
+\ifnum 42146=\euc"A4A2 \AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}\else
+\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
+
+%%%%%%%%%%%  package  %%%%%%%%%%%
+\usepackage{amssymb, amsmath, ascmac}
+\usepackage{url}
+\usepackage{float}
+\usepackage{amsmath,amssymb}
+\usepackage{cleveref}
+\usepackage{geometry} 
+\usepackage{type1cm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\input{jdummy.def}
+
+%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Title}
+\subtitle{\bf Sub Title}
+\author{Author}
+\date[]{Date}
+\institute{Institute or Organization}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Test Presentation}
+  Hello?
+\end{frame}
+
+
+\end{document}
+
+
