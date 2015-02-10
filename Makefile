@@ -1,8 +1,16 @@
-PROJECT=template
+TEX=$(shell ls *.tex)
+PDF=$(TEX:.tex=.pdf)
+DVI=$(TEX:.tex=.dvi)
+
+PNG=$(shell ls *.png)
+XBB=$(PNG:.png=.xbb)
 
 all: compile
-compile: pdf
-pdf: $(PROJECT).pdf
+compile: xbb pdf
+pdf: $(PDF)
+PDF: $(DVI)
+xbb: $(XBB)
+
 
 %.pdf: %.dvi
 	dvipdfmx $<
@@ -13,4 +21,4 @@ pdf: $(PROJECT).pdf
 	extractbb $<
 
 clean:
-	rm  -f *.aux *.bbl *.blg *.dvi *.out *.toc  *.pdf
+	rm  -f *.aux *.bbl *.blg *.dvi *.out *.toc *.xbb *.pdf
